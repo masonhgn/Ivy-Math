@@ -1,0 +1,9 @@
+C:\Users\Mason\Envs\envv\Scripts\activate
+
+source /home/mason2/myproject/venv/bin/activate
+
+restart: 
+
+
+ssh mason2@172.104.17.206
+sudo service apache2 restart

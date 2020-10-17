@@ -1,0 +1,44 @@
+
+{%extends  "boards/base.html" %}
+{% block content %}
+
+<h1>Free Educational Tutorials for Mathematics</h1>
+<h6>Click on a category and search or choose a tutorial.</h6>
+
+<div class="math">
+
+    <a href = "{% url 'alg' %}" style="text-decoration: none;">
+        <div class="alg">
+            <h1 class="mathbuttontext">Algebra</h1>
+            {% load static %}
+            <img class="icon" src="{% static 'alg.png' %}">
+        </div>
+    </a>
+    
+
+    <a href = "{% url 'trig' %}" style="text-decoration: none;">
+        <div class="tri">
+            <h1 class="mathbuttontext">Trigonometry</h1>
+            {% load static %}
+            <img class="icon" src="{% static 'tri.png' %}">
+        </div>
+    </a>
+    
+<a href = "{% url 'prec' %}" style="text-decoration: none;">
+    <div class="pre">
+        <h1 class="mathbuttontext">Pre-Calculus</h1>
+        {% load static %}
+        <img class="icon" src="{% static 'pre.png' %}">
+    </div>
+</a>
+    
+<a href = "{% url 'calc' %}" style="text-decoration: none;">
+    <div class="cal">
+        <h1 class="mathbuttontext">Calculus</h1>
+        {% load static %}
+        <img class="icon" src="{% static 'cal.png' %}">
+    </div>
+</a>
+</div>
+
+{% endblock content%}

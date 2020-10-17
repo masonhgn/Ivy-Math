@@ -1,0 +1,70 @@
+{%extends  "boards/base.html" %}
+{% block content %}
+
+<h1>Posts for Algebra</h1>
+
+
+{% if user.is_authenticated %}
+<div class="createpost">
+    <a class="btn btn-outline-secondary" href="{%url 'post-create-alg' %}">Create New Post</a>
+</div>
+{% endif %}
+
+<!-- <div class="search-bar mt-sm-2">
+    <form method="get">
+        <input type="text" class="form-control" name="q" id="id_q" placeholder="Search algebra posts....">
+    </form>
+</div> -->
+
+{%if postsAlg %}
+
+    {% for post in postsAlg %}
+
+        <div class="postview">
+            <div class="postedby-container">
+                <div class="postedby">
+                    <div class="postedby-text"><p> Posted by {{post.author}}</p></div>
+                    <div class="postedby-img"><img style="width: 30px; height: 30px; border-radius: 60%; margin-bottom: 4px; border-style: solid; border-width: 1px;" src= " {{post.author.profile.image.url}}"></div>
+                    <div><p>on {{ post.date_posted }}</p></div>
+                </div>
+                
+            </div>
+            
+
+            <div class="title">
+                <h3><a href="{% url 'post-detail-alg' post.id %}" style="text-decoration: none; color: rgb(12, 150, 85);">{{ post.title }}</a></h3>
+    
+            </div>
+            
+            <div class="postcont-container">
+                <div class="postcont">
+                    <p>{{ post.content|truncatewords:20 }}...</p>
+                </div>
+                    
+
+            </div>
+            
+                
+        </div>
+    {%endfor%}
+
+{% else %}
+        <div class="container">
+            <div class="row">
+                <div class="card m-auto">
+                    <div class="card-body mt-2 mb 2">
+                        <h2>No results</h2>
+                        <p>There were no results for "{{query}}".</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+{% endif %}
+{% endblock content %}
+
+
+<script type="text/javascript">
+    document.getElementById("id_q").value = "{{query}}"
+</script>

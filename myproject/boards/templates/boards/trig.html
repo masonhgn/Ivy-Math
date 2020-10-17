@@ -1,0 +1,42 @@
+{%extends  "boards/base.html" %}
+{% block content %}
+
+<h1>Posts for Trigonometry</h1>
+
+{% if user.is_authenticated %}
+<div class="createpost">
+    <a class="btn btn-outline-secondary" href="{%url 'post-create-trig' %}">Create New Post</a>
+</div>
+{% endif %}
+
+{% for post in postsTrig %}
+
+    
+    <div class="postview">
+        <div class="postedby-container">
+            <div class="postedby">
+                <div class="postedby-text"><p> Posted by {{post.author}}</p></div>
+                <div class="postedby-img"><img style="width: 30px; height: 30px; border-radius: 60%; margin-bottom: 4px; border-style: solid; border-width: 1px;" src= " {{post.author.profile.image.url}}"></div>
+                <div><p>on {{ post.date_posted }}</p></div>
+            </div>
+            <div></div>
+        </div>
+        
+
+        <div class="title">
+            <h3><a href="{% url 'post-detail-trig' post.id %}" style="text-decoration: none; color: rgb(12, 150, 85);">{{ post.title }}</a></h3>
+ 
+        </div>
+        
+        <div class="postcont-container">
+            <div class="postcont">
+                <p>{{ post.content|truncatewords:20 }}...</p>
+            </div>
+                
+
+        </div>
+        
+            
+    </div>
+{%endfor%}
+{% endblock content %}

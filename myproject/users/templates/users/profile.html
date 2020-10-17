@@ -1,0 +1,28 @@
+{%extends  "boards/base.html" %}
+{%load crispy_forms_tags%}
+{% block content %}
+
+    <div class="profilesection">
+
+        <h2>{{user.username}}</h2>
+        <p>{{user.email}}</p>
+        <img style="width: 160px; height: 180px; border-radius: 60%; margin-top: 2%; margin-bottom: 2%; border-style: solid; border-width: 2px;" src= " {{user.profile.image.url}}">
+
+
+        
+        <form method = "POST" enctype="multipart/form-data">
+            {%csrf_token%}
+            <fieldset class=form-group>
+                <legend>Profile Information:</legend>
+                <div class="editprofile" style="margin-left: 20%; margin-right: 20%;">
+                    {{  u_form|crispy }}  
+                    {{  p_form|crispy }} 
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-success" type="submit">Update</button>
+            </div>
+        </form>
+    </div>
+    
+{% endblock content %}

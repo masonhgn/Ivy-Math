@@ -1,0 +1,40 @@
+{%extends  "boards/base.html" %}
+{% block content %}
+
+<h1>{{ object.title }}</h1>
+
+
+
+    
+    <div class="postdetailview">
+        <div class="postedby-container">
+            <div class="postedby">
+                <div class="postedby-text"><p> Posted by {{object.author}}</p></div>
+                <div class="postedby-img"><img style="width: 30px; height: 30px; border-radius: 60%; margin-bottom: 4px; border-style: solid; border-width: 1px;" src= " {{object.author.profile.image.url}}"></div>
+                <div><p>on {{ object.date_posted }}</p></div>
+            </div>
+            <div></div>
+        </div>
+        
+
+
+        
+        
+        <div class="postdet-container">
+            <div class="postcont">
+                <p>{{ object.content }}</p>
+            </div>
+
+            <div class="videosection">
+                <video width="800" height="600" controls>
+                    <source src="{{ object.clip.url }}" type="video/mp4">
+                  </video>
+            </div>
+                
+
+        </div>
+        
+    </div>     
+    </div>
+
+{% endblock content %}
