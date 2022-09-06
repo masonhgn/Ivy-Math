@@ -17,6 +17,10 @@ Once you click on one of the listings, you will enter a focused page with the vi
 ![Screenshot 2022-09-05 224456](https://user-images.githubusercontent.com/73012906/188536404-ad9f6952-e291-4dba-8a3c-696c4dce2a94.png)
 
 
+Users can view and edit their own profile and profile picture.
+![image](https://user-images.githubusercontent.com/73012906/188536885-fedca2b2-8a87-4e38-8ee8-6ae4412cd387.png)
+
+
 LOGIN PAGE
 
 ![Screenshot 2022-09-05 224507](https://user-images.githubusercontent.com/73012906/188536555-176fb374-edcd-4eb7-84de-f8a8855b7180.png)
