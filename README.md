@@ -3,6 +3,7 @@
 Simple website using django, bootstrap, HTML/CSS that allows users to create and view math videos. 
 The site is separated into 4 different categories. SQLITE database is used with one post model for each category.
 
+Django based web application that allows users to submit and view math tutorial videos, separated into four different categories of mathematics. Users can title and describe the videos, as well as give a caption that will go under the video in the detail view of each post. I learned the most about Django and MVC architecture from this project by far, and I believe that I got some good practice with styling elements in CSS, and properly structuring HTML divs. The project was live on the domain ivymath.net for about a year, and was hosted on Linode.
 
 
 LANDING PAGE (separated into four learning categories)
